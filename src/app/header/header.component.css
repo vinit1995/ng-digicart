@@ -1,0 +1,10 @@
+.logo {
+  font-weight: 500;
+  color: aliceblue;
+}
+.cart-icon {
+  font-size: 30px;
+  margin: 0px 15px;
+  font-weight: 700;
+  cursor: pointer;
+}

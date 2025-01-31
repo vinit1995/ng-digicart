@@ -1,0 +1,11 @@
+.product-container {
+  padding-top: 80px;
+  margin-left: 50px;
+  width: 80%;  
+  margin: auto;
+  background-color: white;
+}
+.product-form, .product-table {  
+  border: none;
+  box-shadow: 10px 6px 40px 0px #e5e3e3;
+}

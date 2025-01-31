@@ -1,0 +1,14 @@
+.product-card {
+  box-shadow: 10px 6px 40px 0px #e5e3e3;
+  border: none;
+}
+.card-text {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.product-img {
+  object-fit: contain;
+  height: 200px;
+}

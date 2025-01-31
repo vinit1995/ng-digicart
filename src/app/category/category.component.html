@@ -1,0 +1,43 @@
+<div class="container category-container d-flex gap-3">
+  <div class="container">
+    <form class="category-form container p-4" (ngSubmit)="saveCategory()" #categoryForm="ngForm">
+      <h4 class="mb-4">Add New Category</h4>
+      <hr>
+      <div class="mb-3">
+        <label for="name" class="form-label">Category name</label>
+        <input type="text" class="form-control"
+          [ngClass]="{'is-invalid': nameField?.touched && nameField?.dirty && !nameField?.value}" name="name" id="name"
+          ngModel required #nameField="ngModel">
+        <span *ngIf="nameField?.touched && nameField?.dirty && !nameField?.value"
+          class="invalid-feedback d-block text-danger">
+          Please enter category name
+        </span>
+        <span *ngIf="error" class="invalid-feedback d-block text-danger">
+          {{error}}
+        </span>
+      </div>
+      <div class="d-flex gap-2 justify-content-end">
+        <button type="submit" [disabled]="(categoryForm.invalid)" class="btn btn-outline-success">Submit</button>
+        <button type="reset" class="btn btn-outline-dark">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Category Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let name of categoryData; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ name }}</td>
+        </tr>
+      </tbody>
+      <p *ngIf="categoryData.length == 0" class="text-danger"> No category found</p>
+    </table>
+  </div>
+</div>

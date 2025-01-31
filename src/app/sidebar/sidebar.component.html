@@ -1,0 +1,27 @@
+<div class="d-flex flex-column bg-gray-500 sidebar">
+  <div class="add-product d-flex flex-column gap-3">
+    <button class="btn btn-outline-dark form-control" [routerLink]="['/']">Homepage</button>
+    <button class="btn btn-outline-success form-control" [routerLink]="['/add-product']">Add Product</button>
+    <button class="btn btn-outline-danger form-control" [routerLink]="['/add-category']">Add Category</button>
+  </div>
+  <hr>
+  <div class="container mt-2">
+    <h5 class="mb-3">Select Products</h5>
+    <form class="d-flex" role="search" (ngSubmit)="searchProduct()" #searchForm="ngForm">
+      <input class="form-control me-2" name="searchInp" type="search" placeholder="Search" aria-label="Search" ngModel
+        #searchInp="ngModel">
+      <button class="btn btn-outline-dark" type="submit">Search</button>
+    </form>
+  </div>
+  <hr>
+
+  <div class="container mt-4">
+    <h5>Categories</h5>
+
+    <div class="d-flex flex-column" role=" group">
+      <div *ngFor="let item of categories" class="border-bottom catDiv">
+        <p (click)="filterCategory(item)">{{ item | uppercase }}</p>
+      </div>
+    </div>
+  </div>
+</div>
