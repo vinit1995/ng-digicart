@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CategoryService } from '../services/category.service';
 import { FilterCategoryService } from '../services/filter-category.service';
 import { SearchProductService } from '../services/search-product.service';
@@ -21,6 +21,8 @@ export class SidebarComponent {
   filterCategoryService = inject(FilterCategoryService)
   searchProductService = inject(SearchProductService)
 
+  router = inject(Router)
+  constructor() {}
   ngOnInit(): void {
     this.getAllCategories()
   }

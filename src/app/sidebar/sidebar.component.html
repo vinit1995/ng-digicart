@@ -5,7 +5,7 @@
     <button class="btn btn-outline-danger form-control" [routerLink]="['/add-category']">Add Category</button>
   </div>
   <hr>
-  <div class="container mt-2">
+  <div class="container mt-2" *ngIf="router.url === '/dashboard'">
     <h5 class="mb-3">Select Products</h5>
     <form class="d-flex" role="search" (ngSubmit)="searchProduct()" #searchForm="ngForm">
       <input class="form-control me-2" name="searchInp" type="search" placeholder="Search" aria-label="Search" ngModel
@@ -15,7 +15,7 @@
   </div>
   <hr>
 
-  <div class="container mt-4">
+  <div class="container mt-4" *ngIf="router.url === '/dashboard'">
     <h5>Categories</h5>
 
     <div class="d-flex flex-column" role=" group">
